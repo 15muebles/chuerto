@@ -73,23 +73,23 @@ body { padding-top: 50px; }
 #pre-navbar .active a[href="#itinerario"],
 #pre-navbar .active .itinerario,
 .epi-itinerario {
-	background-color: #a8d4d4;
+	background-color: #e4de85;
 }
 #pre-navbar .active a[href="#badge"],
 #pre-navbar .active .badge,
 .epi-badge {
-	background-color: #b8dbdb;
+	background-color: #e4de85;
 }
 #pre-navbar .active a[href="#actividad"],
 #pre-navbar .active .actividad,
 .epi-actividad {
-	background-color: #c7e3e3;
+	background-color: #e4de85;
 }
 .epi-earner {
-	background-color: #d5eaea;
+	background-color: #e4de85;
 } 
 .epi-post {
-	background-color: #9fcfcf;
+	background-color: #e4de85;
 }
 #pre-navbar .active .badge {
 	font-size: inherit;
@@ -118,7 +118,7 @@ body { padding-top: 50px; }
 	background-image: url('images/chuerto-bg-band-border-black-hover.png');
 }
 .epi-home {
-	background-color: #c7e3e3;
+	background-color: #e4de85;
 }
 
 /* footer */
@@ -126,15 +126,15 @@ body { padding-top: 50px; }
 	background-image: url('images/chuerto-skyline.png');
 	background-position: center top;
 	background-repeat: repeat-x;
-	background-size: 800px auto;
-	height: 261px;
-	padding: 70px 0;
+	background-size: 1024px auto;
+	height: 369px;
+	padding: 20px 0;
 }
 #epi .container {
 	margin-top: 14px;
 }
 #trasepi {
-	background-color: #47471a;
+	background-color: #55552b;
 	padding-top: 20px;
 }
 .explica {
@@ -223,11 +223,17 @@ body { padding-top: 50px; }
 	background-image: url('images/chuerto-bg-band-border-hover.png');
 }
 
+.patrocina {
+	margin-bottom: 25px;
+}
 img.patrocina-main {
-	width: 160px;
+	margin: 0 10px;
 }
 img.patrocina-sec {
-	width: 60px;
+	margin: 30px 10px 0;
+}
+img.patrocina-ter {
+	margin: 40px 10px 0;
 }
 
 /* main content */
@@ -407,7 +413,7 @@ img.patrocina-sec {
 	padding: 70px 0;
 }
 .epi-about {
-	background-color: #9fcfcf;
+	background-color: #e4de85;
 }
 .parent-tit {
 	font-family: 'museo700';
