@@ -2,16 +2,16 @@
 if( $pt == 'itinerario' ) {
 	$rel_item_date_begin = "";
 	$rel_item_date_end = "";
-	$rel_item_subtit = get_post_meta( $rel->ID, '_quincem_subtit', true );
+	$rel_item_subtit = get_post_meta( $rel->ID, '_chuerto_subtit', true );
 }elseif( $pt == 'badge' ) {
-	$rel_item_date_begin = get_post_meta( $rel->ID, '_quincem_date_begin', true );
-	$rel_item_date_end = get_post_meta( $rel->ID, '_quincem_date_end', true );
+	$rel_item_date_begin = get_post_meta( $rel->ID, '_chuerto_date_begin', true );
+	$rel_item_date_end = get_post_meta( $rel->ID, '_chuerto_date_end', true );
 	$rel_item_date_out = date('d\/m',$rel_item_date_begin). "-" .date('d\/m',$rel_item_date_end);
-	$rel_item_subtit = get_post_meta( $rel->ID, '_quincem_escenario', true );
+	$rel_item_subtit = get_post_meta( $rel->ID, '_chuerto_escenario', true );
 } elseif ( $pt == 'actividad' ) {
 	$rel_item_date_begin = "";
 	$rel_item_date_end = "";
-	$rel_item_subtit = get_post_meta( $rel->ID, '_quincem_subtit', true );
+	$rel_item_subtit = get_post_meta( $rel->ID, '_chuerto_subtit', true );
 }
 
 $rel_item_perma = get_permalink($rel->ID);

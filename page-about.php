@@ -7,7 +7,7 @@ while ( have_posts() ) : the_post();
 
 	// containers
 	$pages_loop = "";
-	$pages_nav = "<ul class='list-unstyled quincem-smooth'>";
+	$pages_nav = "<ul class='list-unstyled chuerto-smooth'>";
 
 	// children pages query
 	$args = array(

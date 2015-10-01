@@ -2,12 +2,12 @@
 get_header();
 
 // earner data
-$earner_name = get_post_meta( $post->ID, '_quincem_earner_name',true );
-$earner_mail = get_post_meta( $post->ID, '_quincem_earner_mail',true );
-$earner_evidence = get_post_meta( $post->ID, '_quincem_earner_material',true );
+$earner_name = get_post_meta( $post->ID, '_chuerto_earner_name',true );
+$earner_mail = get_post_meta( $post->ID, '_chuerto_earner_mail',true );
+$earner_evidence = get_post_meta( $post->ID, '_chuerto_earner_material',true );
 $earner_date = $post->post_date;
-$earner_actividad = get_post_meta( $post->ID, '_quincem_earner_actividad',true );
-$earner_badge = get_post_meta( $post->ID, '_quincem_earner_badge',true );
+$earner_actividad = get_post_meta( $post->ID, '_chuerto_earner_actividad',true );
+$earner_badge = get_post_meta( $post->ID, '_chuerto_earner_badge',true );
 
 // badge data
 $args = array(
@@ -71,7 +71,7 @@ if ( isset($badge_in_backpack) ) {
 		'post_type' => 'earner',
 		'meta_query' => array(
 			array(
-				'key' => '_quincem_earner_mail',
+				'key' => '_chuerto_earner_mail',
 				'value' => $earner_mail,
 				'compare' => 'LIKE'
 			)
@@ -80,7 +80,7 @@ if ( isset($badge_in_backpack) ) {
 	$earners = get_posts($args);
 	$earner_badges_out = "<p>" .$earner_name. " ha ganado los siguientes badges de Ciudad Escuela:</p><ul>";
 	foreach ( $earners as $this_earner ) {
-		$this_earner_badge = get_post_meta( $this_earner->ID, '_quincem_earner_badge', true );
+		$this_earner_badge = get_post_meta( $this_earner->ID, '_chuerto_earner_badge', true );
 		$this_earner_badge_perma = get_permalink($this_earner_badge);
 		$this_earner_badge_tit = get_the_title($this_earner_badge);
 		$earner_badges_out .= "<li><a href='" .$this_earner_badge_perma. "'>" .$this_earner_badge_tit. "</a></li>";

@@ -22,7 +22,7 @@ while ( have_posts() ) : the_post();
 	<section class="row page-desc">
 		<div class="col-md-8 col-sm-9">
 			<?php the_content();
-			quincem_insert_earner();
+			chuerto_insert_earner();
 			?>
 		</div>
 	</section><!-- #<?php echo $parent_slug; ?> -->

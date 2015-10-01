@@ -5,7 +5,7 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 	$item_subtit = "";
 	$item_date_begin = "";
 	$item_date_end = "";
-	$item_icon_id = get_post_meta( $post->ID, '_quincem_icono_id',true );	
+	$item_icon_id = get_post_meta( $post->ID, '_chuerto_icono_id',true );	
 	if ( $item_icon_id != '' ) {
 		$item_icon = wp_get_attachment_image( $item_icon_id, 'icon' );
 		$item_icons_out = "<ul class='list-inline'><li>" .$item_icon. "</li></ul>";
@@ -17,7 +17,7 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 
 
 } elseif ( $band_pts[$band_count] == 'badge' ) {
-	$item_subtit = get_post_meta( $post->ID, '_quincem_subtit', true );
+	$item_subtit = get_post_meta( $post->ID, '_chuerto_subtit', true );
 
 	$item_date_begin = "";
 	$item_date_end = "";
@@ -28,10 +28,10 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 
 
 } elseif ( $band_pts[$band_count] == 'actividad' ) {
-	$item_subtit = get_post_meta( $post->ID, '_quincem_escenario', true );
+	$item_subtit = get_post_meta( $post->ID, '_chuerto_escenario', true );
 
-	$item_date_begin = get_post_meta( $post->ID, '_quincem_date_begin', true );
-	$item_date_end = get_post_meta( $post->ID, '_quincem_date_end', true );
+	$item_date_begin = get_post_meta( $post->ID, '_chuerto_date_begin', true );
+	$item_date_end = get_post_meta( $post->ID, '_chuerto_date_end', true );
 	$item_date_begin_human = date('d\/m',$item_date_begin);
 	$item_date_end_human = date('d\/m',$item_date_end);
 	if ( $item_date_begin_human == $item_date_end_human ) {
@@ -46,7 +46,7 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 		'post_type' => 'badge',
 		'meta_query' => array(
 			array(
-				'key' => '_quincem_actividades',
+				'key' => '_chuerto_actividades',
 				'value' => '"' .$post->ID. '"',
 				'compare' => 'LIKE'
 			)
@@ -58,7 +58,7 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 		foreach ( $badges as $badge ) {
 			$badge_perma = get_permalink( $badge->ID );
 			$badge_tit = get_the_title( $badge->ID );
-			$badge_icon_id = get_post_meta( $badge->ID, '_quincem_icono_id',true );	
+			$badge_icon_id = get_post_meta( $badge->ID, '_chuerto_icono_id',true );	
 			$badge_icon = wp_get_attachment_image( $badge_icon_id, 'icon' );
 			$item_icons_out .= "<li><a href='" .$badge_perma. "' title='Badge: " .$badge_tit. "'>" .$badge_icon. "</a></li>";
 		}

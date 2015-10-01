@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// navbar items click event
-	$(".quincem-smooth a[href^='#']").on('click', function(e) {
+	$(".chuerto-smooth a[href^='#']").on('click', function(e) {
 		// prevent default anchor click behavior
 		e.preventDefault();
 

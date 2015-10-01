@@ -16,7 +16,7 @@ if ( $pt == 'itinerario' ) {
 	$single_date_begin = "";
 	$single_date_end = "";
 	$single_info_out = "";
-	$single_icon_id = get_post_meta( $post->ID, '_quincem_icono_id',true );	
+	$single_icon_id = get_post_meta( $post->ID, '_chuerto_icono_id',true );	
 	if ( $single_icon_id != '' ) {
 		$single_icon = wp_get_attachment_image( $single_icon_id, 'icon' );
 		$single_icons_out = "<ul class='list-inline'><li>" .$single_icon. "</li></ul>";
@@ -27,7 +27,7 @@ if ( $pt == 'itinerario' ) {
 	$single_earners_out = "";
 
 } elseif ( $pt == 'badge' ) {
-	$single_subtit = get_post_meta( $post->ID, '_quincem_subtit', true );
+	$single_subtit = get_post_meta( $post->ID, '_chuerto_subtit', true );
 	$single_date_begin = "";
 	$single_date_end = "";
 	$single_info = "";
@@ -36,7 +36,7 @@ if ( $pt == 'itinerario' ) {
 		'post_type' => 'itinerario',
 		'meta_query' => array(
 			array(
-				'key' => '_quincem_badges',
+				'key' => '_chuerto_badges',
 				'value' => '"' .$post->ID. '"',
 				'compare' => 'LIKE'
 			)
@@ -46,7 +46,7 @@ if ( $pt == 'itinerario' ) {
 	if ( count($itinerarios) > 0 ) {
 		$single_icons_out = "<ul class='list-inline single-icons'>";
 		foreach ( $itinerarios as $itinerario ) {
-			$itinerario_icon_id = get_post_meta( $itinerario->ID, '_quincem_icono_id',true );
+			$itinerario_icon_id = get_post_meta( $itinerario->ID, '_chuerto_icono_id',true );
 			if ( $itinerario_icon_id != '' ) {
 				$itinerario_perma = get_permalink( $itinerario->ID );
 				$itinerario_tit = get_the_title( $itinerario->ID );
@@ -57,13 +57,13 @@ if ( $pt == 'itinerario' ) {
 	} else { $single_icons_out = ""; }
 
 	$single_img_size = "small";
-	$single_material = get_post_meta( $post->ID, '_quincem_material',true );
+	$single_material = get_post_meta( $post->ID, '_chuerto_material',true );
 	if ( $single_material != '' ) {
 		$single_material_out = "<h2>Material de trabajo</h2>" .apply_filters( 'the_content', $single_material );
 	}
 	else { $single_material_out = ""; }
 
-	$single_como = get_post_meta( $post->ID, '_quincem_badge_como',true );
+	$single_como = get_post_meta( $post->ID, '_chuerto_badge_como',true );
 	if ( $single_como != '' ) {
 		$single_como_out =
 			"<h2>Cómo ganar el badge</h2>"
@@ -78,7 +78,7 @@ if ( $pt == 'itinerario' ) {
 		'post_type' => 'earner',
 		'meta_query' => array(
 			array(
-				'key' => '_quincem_earner_badge',
+				'key' => '_chuerto_earner_badge',
 				//'value' => '"' .$post->ID. '"',
 				'value' => $post->ID,
 				'compare' => '='
@@ -94,11 +94,11 @@ if ( $pt == 'itinerario' ) {
 			$id_count++;
 			if ( has_post_thumbnail( $earner->ID ) ) {
 				$earner_avatar = get_the_post_thumbnail( $earner->ID,'bigicon' );
-			} else { $earner_avatar = "<img src='" .QUINCEM_BLOGTHEME. "/images/quincem-earner-avatar.png' alt='Avatar por omisión en Ciudad Escuela' />"; }
-			$earner_name = get_post_meta( $earner->ID, '_quincem_earner_name', true );
+			} else { $earner_avatar = "<img src='" .CHUERTO_BLOGTHEME. "/images/chuerto-earner-avatar.png' alt='Avatar por omisión en Ciudad Escuela' />"; }
+			$earner_name = get_post_meta( $earner->ID, '_chuerto_earner_name', true );
 			$earner_date = $earner->post_date;
-			$earner_material = get_post_meta( $earner->ID, '_quincem_earner_material', true );
-			$earner_actividad = get_post_meta( $earner->ID, '_quincem_earner_actividad', true );
+			$earner_material = get_post_meta( $earner->ID, '_chuerto_earner_material', true );
+			$earner_actividad = get_post_meta( $earner->ID, '_chuerto_earner_actividad', true );
 			$single_earners_out .= "<li><a id='earner-" .$id_count. "' class='earner-click' title='" .$earner_name. "'>" .$earner_avatar. "</a></li>";
 			$earners_script .= "
 				jQuery('#earner-$id_count').popover({
@@ -114,10 +114,10 @@ if ( $pt == 'itinerario' ) {
 	} else { $single_earners_out = ""; }
 
 } elseif ( $pt == 'actividad' ) {
-	$single_subtit = get_post_meta( $post->ID, '_quincem_escenario', true );
+	$single_subtit = get_post_meta( $post->ID, '_chuerto_escenario', true );
 
-	$single_date_begin = get_post_meta( $post->ID, '_quincem_date_begin', true );
-	$single_date_end = get_post_meta( $post->ID, '_quincem_date_end', true );
+	$single_date_begin = get_post_meta( $post->ID, '_chuerto_date_begin', true );
+	$single_date_end = get_post_meta( $post->ID, '_chuerto_date_end', true );
 	$single_date_begin_human = date('d\/m',$single_date_begin);
 	$single_date_end_human = date('d\/m',$single_date_end);
 	if ( $single_date_begin_human == $single_date_end_human ) {
@@ -125,7 +125,7 @@ if ( $pt == 'itinerario' ) {
 	} else {
 		$single_date_out = $single_date_begin_human. "-" .$single_date_end_human;
 	}
-	$single_info = get_post_meta( $post->ID, '_quincem_contacto', true );
+	$single_info = get_post_meta( $post->ID, '_chuerto_contacto', true );
 	if ( $single_info != '' ) { $single_info_out = apply_filters( 'the_content', $single_info ); }
 	else { $single_info_out = ""; }
 
@@ -133,7 +133,7 @@ if ( $pt == 'itinerario' ) {
 		'post_type' => 'badge',
 		'meta_query' => array(
 			array(
-				'key' => '_quincem_actividades',
+				'key' => '_chuerto_actividades',
 				'value' => '"' .$post->ID. '"',
 				'compare' => 'LIKE'
 			)
@@ -143,7 +143,7 @@ if ( $pt == 'itinerario' ) {
 	if ( count($badges) > 0 ) {
 		$single_icons_out = "<ul class='list-inline single-icons'>";
 		foreach ( $badges as $badge ) {
-			$badge_icon_id = get_post_meta( $badge->ID, '_quincem_icono_id',true );
+			$badge_icon_id = get_post_meta( $badge->ID, '_chuerto_icono_id',true );
 			if ( $badge_icon_id != '' ) {
 				$badge_perma = get_permalink( $badge->ID );
 				$badge_tit = get_the_title( $badge->ID );
@@ -231,7 +231,7 @@ if ( has_post_thumbnail() ) { $single_logo = get_the_post_thumbnail($post->ID,$s
 		<?php // related content
 		if ( $pt == 'itinerario' ) {
 			$rel_tit = "Badges del itinerario";
-			$rel_array = get_post_meta( $post->ID, '_quincem_badges', false );
+			$rel_array = get_post_meta( $post->ID, '_chuerto_badges', false );
 			if ( count($rel_array) > 0 ) {
 				$rel_ids = implode(",",$rel_array[0]);
 				$args = array(
@@ -246,7 +246,7 @@ if ( has_post_thumbnail() ) { $single_logo = get_the_post_thumbnail($post->ID,$s
 
 		} elseif ( $pt == 'badge' ) {
 			$rel_tit = "Actividades posibles";
-			$rel_array = get_post_meta( $post->ID, '_quincem_actividades', false );
+			$rel_array = get_post_meta( $post->ID, '_chuerto_actividades', false );
 			if ( count($rel_array) > 0 ) {
 				$rel_ids = implode(",",$rel_array[0]);
 				$args = array(
@@ -261,7 +261,7 @@ if ( has_post_thumbnail() ) { $single_logo = get_the_post_thumbnail($post->ID,$s
 
 		} elseif ( $pt == 'actividad' ) {
 			$rel_tit = "Badges de la actividad";
-			$rel_array = get_post_meta( $post->ID, '_quincem_badges', false );
+			$rel_array = get_post_meta( $post->ID, '_chuerto_badges', false );
 			if ( count($rel_array) > 0 ) {
 				$rel_ids = implode(",",$rel_array[0]);
 				$args = array(

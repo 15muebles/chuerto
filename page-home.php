@@ -16,9 +16,9 @@ $rombo_classes = array("rombo col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3"
 <header class="aligncenter">
 	<div class="row hair">
 		<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-			<img id="quincem-imago" src="<?php echo QUINCEM_BLOGTHEME; ?>/images/quincem-imago.png" alt="<?php echo QUINCEM_BLOGNAME. " | " . QUINCEM_BLOGDESC; ?>" />
-			<h1 class="hideout"><?php echo QUINCEM_BLOGNAME ?></h1>
-			<div class="hideout"><strong><?php echo QUINCEM_BLOGDESC ?></strong></div>
+			<img id="chuerto-imago" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.png" alt="<?php echo CHUERTO_BLOGNAME. " | " . CHUERTO_BLOGDESC; ?>" />
+			<h1 class="hideout"><?php echo CHUERTO_BLOGNAME ?></h1>
+			<div class="hideout"><strong><?php echo CHUERTO_BLOGDESC ?></strong></div>
 		</div>
 	</div>
 </header>
@@ -28,7 +28,7 @@ $rombo_classes = array("rombo col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3"
 		$rombo_count = 0;
 		foreach ( $band_pts as $band_pt ) { ?>
 		<div class="<?php echo $rombo_classes[$rombo_count]; ?>">
-			<h2 class="rombo-tit quincem-smooth"><a href="#<?php echo $band_pt; ?>"><?php echo $wp_post_types[$band_pt]->labels->parent; ?></a></h2>
+			<h2 class="rombo-tit chuerto-smooth"><a href="#<?php echo $band_pt; ?>"><?php echo $wp_post_types[$band_pt]->labels->parent; ?></a></h2>
 			<p><small><?php echo $wp_post_types[$band_pt]->description; ?></small></p>
 		</div>
 		<?php $rombo_count++;
@@ -42,9 +42,9 @@ $rombo_classes = array("rombo col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3"
 	<div class="row patrocina">
 		<div class="col-md-4 col-md-offset-4">
 			<ul class="list-inline">
-				<li><a href="http://openbadges.org"><img class="patrocina-sec" src="<?php echo QUINCEM_BLOGTHEME; ?>/images/quincem-mozilla.png" alt="Mozilla Foundation" /></a></li>
-				<li><a href="http://15muebles.org/"><img class="patrocina-main" src="<?php echo QUINCEM_BLOGTHEME; ?>/images/quincem-15muebles.png" alt="Proyecto 15 muebles" /></a></li>
-				<li><a href="http://museoreinasofia.es/"><img class="patrocina-sec" src="<?php echo QUINCEM_BLOGTHEME; ?>/images/quincem-mncars.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></a></li>
+				<li><a href="http://openbadges.org"><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-mozilla.png" alt="Mozilla Foundation" /></a></li>
+				<li><a href="http://15muebles.org/"><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-15muebles.png" alt="Proyecto 15 muebles" /></a></li>
+				<li><a href="http://museoreinasofia.es/"><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-mncars.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></a></li>
 			</ul>
 		</div>
 	</div>
@@ -131,11 +131,11 @@ foreach ( $band_pts as $band_pt ) {
 			'posts_per_page' => -1,
 			'post_type' => $band_pt,
 			'orderby' => 'meta_value_num',
-			'meta_key' => '_quincem_date_begin',
+			'meta_key' => '_chuerto_date_begin',
 			'order' => 'ASC',
 			'meta_query' => array(
 				array(
-					'key' => '_quincem_date_begin',
+					'key' => '_chuerto_date_begin',
 					'value' => $current,
 					'compare' => '>'
 				)
@@ -147,17 +147,17 @@ foreach ( $band_pts as $band_pt ) {
 			'posts_per_page' => -1,
 			'post_type' => $band_pt,
 			'orderby' => 'meta_value_num',
-			'meta_key' => '_quincem_date_begin',
+			'meta_key' => '_chuerto_date_begin',
 			'order' => 'ASC',
 			'meta_query' => array(
 				'relation' => 'AND',
 				array(
-					'key' => '_quincem_date_begin',
+					'key' => '_chuerto_date_begin',
 					'value' => $current,
 					'compare' => '<'
 				),
 				array(
-					'key' => '_quincem_date_end',
+					'key' => '_chuerto_date_end',
 					'value' => $current,
 					'compare' => '>'
 				)
@@ -169,11 +169,11 @@ foreach ( $band_pts as $band_pt ) {
 			'posts_per_page' => -1,
 			'post_type' => $band_pt,
 			'orderby' => 'meta_value_num',
-			'meta_key' => '_quincem_date_begin',
+			'meta_key' => '_chuerto_date_begin',
 			'order' => 'DESC',
 			'meta_query' => array(
 				array(
-					'key' => '_quincem_date_end',
+					'key' => '_chuerto_date_end',
 					'value' => $current,
 					'compare' => '<'
 				)

@@ -1,7 +1,7 @@
 jQuery(function() { 
 	var error;
-	jQuery("#quincem-form-content input[type=submit]").click(function() {
-		jQuery("#quincem-form-content .req").each(function() {
+	jQuery("#chuerto-form-content input[type=submit]").click(function() {
+		jQuery("#chuerto-form-content .req").each(function() {
 			if ( jQuery(this).val() == null || jQuery(this).val() == "" ) {
 				error = true;
 			}
