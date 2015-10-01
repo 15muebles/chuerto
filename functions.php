@@ -39,7 +39,7 @@ function chuerto_theme_setup() {
 	add_post_type_support( 'badge', 'page-attributes' );
 
 	// disable admin bar in front end
-//	add_filter('show_admin_bar', '__return_false');
+	add_filter('show_admin_bar', '__return_false');
 
 	// adding classes to post_class()
 	add_filter('post_class', 'chuerto_classes');
