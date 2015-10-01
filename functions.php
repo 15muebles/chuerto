@@ -162,7 +162,7 @@ function chuerto_create_post_type() {
 	// Módulo post type
 	register_post_type( 'badge', array(
 		'labels' => array(
-			'name' => __( 'Badges' ),
+			'name' => __( 'Aprendizaje en torno al huerto' ),
 			'singular_name' => __( 'Badge' ),
 			'add_new_item' => __( 'Añadir badge' ),
 			'edit' => __( 'Editar' ),
@@ -173,9 +173,9 @@ function chuerto_create_post_type() {
 			'search_items' => __( 'Buscar badges' ),
 			'not_found' => __( 'Ningún badge encontrado' ),
 			'not_found_in_trash' => __( 'Ningún badge en la papelera' ),
-			'parent' => __( 'Aprende' )
+			'parent' => __( 'Itinerario' )
 		),
-		'description' => 'Estos son nuestros 15 badges: unidades de aprendizaje sobre las habilidades, saberes y herramientas que creemos importante poner en juego para construir una ciudad mejor.',
+		'description' => 'El itinerario de Ciudad Huerto está compuesto de ocho unidades de aprendizaje desarrolladas en torno a saberes que se encuentran normalmente en huertos urbanos comunitarios. Cada una estará vinculada a un badge de <a href="http://ciudad-escuela.org" title="Pedagogía Urbana Open Source">Ciudad Escuela</a>, que es nuestra forma de legitimar el conocimiento adquirido. Pincha sobre ellos si quieres conseguirlos.',
 		'has_archive' => false,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -235,9 +235,9 @@ function chuerto_create_post_type() {
 			'search_items' => __( 'Buscar actividades' ),
 			'not_found' => __( 'Ningún actividad encontrado' ),
 			'not_found_in_trash' => __( 'Ningún actividad en la papelera' ),
-			'parent' => __( 'Haz' )
+			'parent' => __( 'Agenda' )
 		),
-		'description' => 'Echa un vistazo a todas las actividades en las que puedes inscribirte y participar: desde talleres de auto-construcción a seminarios teóricos, pasando por debates virtuales o recorridos de abastecimiento.',
+		'description' => 'A lo largo del curso escolar se desarrollarán ocho actividades principales, una sobre cada una de las <a href="#badge" title="Badge de Ciudad Huerto">unidades de aprendizaje</a>. Además a lo largo del tiempo se promocionarán charlas, talleres rápidos y pequeñas pildoras, con los que también se podrá completar el itinerario.',
 		'has_archive' => false,
 		'public' => true,
 		'publicly_queryable' => true,

@@ -6,8 +6,8 @@ get_header();
 global $wp_post_types;
 
 // descubre, aprende, haz bands
-$band_pts = array("itinerario","badge","actividad");
-$band_tits = array("Descubre","Aprende","Haz");
+$band_pts = array("badge","actividad","proyecto");
+$band_tits = array("Itinerario","Agenda","Proyecto");
 ?>
 
 <div id="top" class="container-full">
@@ -48,13 +48,16 @@ $band_tits = array("Descubre","Aprende","Haz");
 $band_count = 0;
 foreach ( $band_pts as $band_pt ) {
 
-	// pt vars
-	$band_tit = $wp_post_types[$band_pt]->labels->parent; 
-	$band_subtit = $wp_post_types[$band_pt]->labels->name;
-	$band_desc = $wp_post_types[$band_pt]->description;
+	// IF IS NOT PROJECT
+	if ( $band_pt != 'proyecto') {
+		// pt vars
+		$band_tit = $wp_post_types[$band_pt]->labels->parent; 
+		$band_subtit = $wp_post_types[$band_pt]->labels->name;
+		$band_desc = $wp_post_types[$band_pt]->description;
+	}
 
 	// IF ITINERARIOS OR BADGES
-	if ( $band_pt != 'actividad' ) {
+	if ( $band_pt == 'itinerario' || $band_pt == 'badge' ) {
 
 		// loop args
 		if ( $band_pt == 'badge' )  {
@@ -96,7 +99,7 @@ foreach ( $band_pts as $band_pt ) {
 			$desktop_count = 0;
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 				if ( $tablet_count == 4 ) { $tablet_count = 0; echo '<div class="clearfix visible-sm"></div>';  }
-				if ( $desktop_count == 6 ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
+				if ( $desktop_count == 4 ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
 				$tablet_count++; $desktop_count++;
 				include "loop-mosac.php";
 
@@ -112,7 +115,7 @@ foreach ( $band_pts as $band_pt ) {
 		<?php } // end if have posts
 
 
-	// ACTIVIDADES
+	// IF ACTIVIDADES
 	} elseif ( $band_pt == 'actividad' ) {
 		$current = time();
 		// future actividades
@@ -200,7 +203,7 @@ foreach ( $band_pts as $band_pt ) {
 				$desktop_count = 0;
 				while ( $the_query->have_posts() ) : $the_query->the_post();
 					if ( $tablet_count == 4 ) { $tablet_count = 0; echo '<div class="clearfix visible-sm"></div>';  }
-					if ( $desktop_count == 6 ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
+					if ( $desktop_count == 4 ) { $desktop_count = 0; echo '<div class="clearfix visible-md visible-lg"></div>';  }
 					$tablet_count++; $desktop_count++;
 					include "loop-mosac.php";
 
@@ -216,7 +219,42 @@ foreach ( $band_pts as $band_pt ) {
 		</div><!-- .container -->
 		</div><!-- .container-full -->
 
-	<?php } // END if ACTIVIDADES
+	<?php // IF PROYECTO PAGE
+	} elseif ( $band_pt == 'proyecto' ) {
+		// loop args
+		$args = array(
+			'post_type' => 'page',
+			'pagename' => 'proyecto'
+		);
+		$page = get_posts($args);
+		foreach ( $page as $post ) {
+			setup_postdata($post);
+			$band_tit = "Proyecto"; ?>
+
+		<div id="<?php echo $band_pt; ?>" class="container-full">
+		<div class="container">
+		<section>
+			<header class="sec-header row hair">
+			<div class="col-md-12 col-sm-12">
+				<div class="sec-tit">
+					<h2><?php echo $band_tit; ?></h2>
+					<div class="sec-subtit"><?php the_title(); ?></div>
+				</div>
+				<div class="sec-desc"><p><?php echo get_the_excerpt(); ?></p></div>
+			</div>
+			</header><!-- .sec-header .row .hair-->
+
+			<div class="row hair">
+				<div class="col-md-8 col-sm-8"><?php the_content(); ?></div>
+			</div><!-- .row .hair -->
+		</section>
+		</div><!-- .container -->
+		</div><!-- .container-full -->
+
+		<?php } // end foreach
+		wp_reset_postdata();
+
+	} // END if PROYECTO PAGE
 
 	$band_count++;
 }

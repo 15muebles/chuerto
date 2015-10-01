@@ -60,6 +60,14 @@ body { padding-top: 50px; }
 	font-family: 'museo700';
 	text-transform: uppercase;
 }
+#main-tit {
+	font-family: 'blanchcondensed_inline',sans-serif;
+	font-size: 54px;
+	line-height: 0.8em;
+	color: #fff;
+	margin-bottom: 0;
+}
+
 .navbar-default,
 .navbar-default .navbar-nav>.active>a {
 	background-image: none;
@@ -73,18 +81,23 @@ body { padding-top: 50px; }
 #pre-navbar .active a[href="#itinerario"],
 #pre-navbar .active .itinerario,
 .epi-itinerario {
-	background-color: #e4de85;
 }
 #pre-navbar .active a[href="#badge"],
 #pre-navbar .active .badge,
 .epi-badge {
-	background-color: #e4de85;
+	background-color: #e4de6b;
 }
 #pre-navbar .active a[href="#actividad"],
 #pre-navbar .active .actividad,
 .epi-actividad {
+	background-color: #e4de78;
+}
+#pre-navbar .active a[href="#proyecto"],
+#pre-navbar .active .proyecto,
+.epi-itinerario {
 	background-color: #e4de85;
 }
+
 .epi-earner {
 	background-color: #e4de85;
 } 
@@ -157,13 +170,14 @@ body { padding-top: 50px; }
 #top {
 	background-color: #e4de64;
 }
-#itinerario {
-	background-color: #e4de6b;
-}
 #badge {
-	background-color: #e4de78;
+	background-color: #e4de6b;
+	
 }
 #actividad {
+	background-color: #e4de78;
+}
+#proyecto {
 	background-color: #e4de85;
 }
 #earner {
@@ -222,22 +236,25 @@ img.patrocina-ter {
 .sec-tit h2 {
 	font-size: 60px;
 	line-height: 1em;
-	color: #fff;
+	color: #30341b;
 	margin: 0;
 }
 .sec-subtit {
 	font-family: 'amatic_scbold';
 	font-size: 34px;
 	line-height: 1em;
+	color: #1d1d1b;
 	text-transform: uppercase;
 }
 .sec-desc {
+	font-size: 18px;
 	padding-top: 3px;
-	color: #fff;
+	color: #30341b;
 }
 .sec-part-tit {
 	font-size: 34px;
 	line-height: 1em;
+	color: #1d1d1b;
 	margin-top: 0;
 }
 
@@ -574,7 +591,7 @@ label {
 		display: inline;
 	}
 	.sec-desc {
-		width: 40%;
+		width: 60%;
 	}
 
 /* END

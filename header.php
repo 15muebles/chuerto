@@ -125,8 +125,8 @@ else { $link_prefix = ""; }
 global $wp_post_types;
 
 // descubre, aprende, haz bands
-$band_pts = array("itinerario","badge","actividad");
-$band_tits = array("Descubre","Aprende","Haz");
+$band_pts = array("badge","actividad","proyecto");
+$band_tits = array("Itinerario","Agenda","Proyecto");
 ?>
 
 <nav id="pre-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -138,7 +138,7 @@ $band_tits = array("Descubre","Aprende","Haz");
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo $link_prefix; ?>#top" title="<?php echo CHUERTO_BLOGNAME; ?>"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-logo.png" alt="<?php echo CHUERTO_BLOGNAME; ?>" /></a>
+			<a id="main-tit" class="navbar-brand" href="<?php echo $link_prefix; ?>#top" title="<?php echo CHUERTO_BLOGNAME; ?>"><?php echo CHUERTO_BLOGNAME; ?></a>
 		</div>
 		<div class="collapse navbar-collapse" id="chuerto-pre-navbar-collapse">
 			<ul id="navbar-main" class="nav navbar-nav chuerto-smooth">
@@ -152,33 +152,11 @@ $band_tits = array("Descubre","Aprende","Haz");
 					$nav_count++;
 				} ?>
 			</ul>
-			<ul id="navbar-sec" class="nav navbar-nav navbar-left">
-				<?php if ( $wp_query->query_vars['pagename'] == 'about' ) { ?>
-					<li class="active"><a class="border-band-black" href="">About</a></li>
-				<?php } else { ?>
-					<li><a class="border-band-black" href="/about">About</a></li>
-				<?php } ?>
-					<li><a href="/preguntas-frecuentes">FAQ</a></li>
-					<li><a href="/blog">Blog</a></li>
+			<ul id="navbar-sec" class="nav navbar-nav navbar-right">
+					<li><a href="/blog">Blog/Archivo</a></li>
+					<li><a href="/preguntas-frecuentes">Foro</a></li>
 			</ul>
 
-			<ul id="navbar-third" class="nav navbar-nav navbar-right">
-				<li class="navbar-socialb">
-<div class="g-follow" data-annotation="bubble" data-height="20" data-href="https://plus.google.com/104536835218787209984" data-rel="publisher"></div>
-
-<!-- Place this tag after the last widget tag. -->
-<script type="text/javascript">
-  window.___gcfg = {lang: 'es'};
-
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-
-				</li>
-			</ul>
 		</div>
 	</div>
 </nav>
