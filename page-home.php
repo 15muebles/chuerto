@@ -14,10 +14,11 @@ $band_tits = array("Descubre","Aprende","Haz");
 <div class="container">
 <header class="aligncenter">
 	<div class="row hair">
-		<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
 			<img id="chuerto-imago" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.star.png" alt="<?php echo CHUERTO_BLOGNAME. " | " . CHUERTO_BLOGDESC; ?>" />
 			<h1 class="hideout"><?php echo CHUERTO_BLOGNAME ?></h1>
-			<div id="tagline"><strong><?php echo CHUERTO_BLOGDESC ?></strong></div>
+			<h2 id="main-subtit"><?php echo CHUERTO_BLOGDESC ?></h2>
+			<div id="main-desc">Un itinerario formativo que recoge los aprendizajes y experiencias que se están poniendo en juego en los huertos urbanos comunitarios de la ciudad de Madrid.</div>
 		</div>
 	</div>
 </header>

@@ -173,37 +173,18 @@ body { padding-top: 50px; }
 #chuerto-imago {
 	width: 233px;
 }
-.rombo {
-	background-image: url('images/chuerto-bg-rombo.png');
-	background-repeat: no-repeat;
-	background-position: center top;
+#main-subtit {
+	font-family: 'blanchcondensed_inline',sans-serif;
+	font-size: 80px;
+	margin-bottom: 0;
+}
+#main-desc {
+	font-family: 'blanchcondensed',sans-serif;
+	font-size: 30px;
+	line-height: 0.9em;
+	padding: 0 15%;
 }
 
-.rombo-tit a {
-	display: block;
-	color: #fff;
-	margin-bottom: 0;
-	background-image: url('images/chuerto-bg-band-hover.png');
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: contain;
-	opacity: 0.7;
-}
-.rombo-tit a:hover {
-	text-decoration: none;
-	opacity: 1;
-}
-.rombo p,
-.home .mosac-item-desc {
-	line-height: 1.1em;
-}
-.border-band-black {
-	display: block;
-	background-image: url('images/chuerto-bg-band-border-black.png');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: contain;
-}
 .btn-chuerto {
 	font-size: 24px;
 	text-transform: uppercase;
