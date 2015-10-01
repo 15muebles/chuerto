@@ -155,16 +155,16 @@ body { padding-top: 50px; }
 	padding: 70px 0;
 }
 #top {
-	background-color: #9cc;
+	background-color: #e4de64;
 }
 #itinerario {
-	background-color: #a8d4d4;
+	background-color: #e4de6b;
 }
 #badge {
-	background-color: #b8dbdb;
+	background-color: #e4de78;
 }
 #actividad {
-	background-color: #c7e3e3;
+	background-color: #e4de85;
 }
 #earner {
 	background-color: #d5eaea;
@@ -204,23 +204,24 @@ body { padding-top: 50px; }
 	background-position: center center;
 	background-size: contain;
 }
-.border-band-white {
+.btn-chuerto {
 	font-size: 24px;
 	text-transform: uppercase;
 	font-family: "museo700";
 	line-height: 37px;
 	height: 34px;
 	color: #fff;
+	background-color: #969e4f;
 	display: block;
-	background-image: url('images/chuerto-bg-band-border.png');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: contain;
+	background-image: url('images/chuerto-btn.border.left.png'),url('images/chuerto-btn.border.right.png');
+	background-repeat: no-repeat,no-repeat;
+	background-position: left center,right center;
+	background-size: contain,contain;
 }
-.border-band-white:hover {
+.btn-chuerto:hover {
 	text-decoration: none;
-	color: #000;
-	background-image: url('images/chuerto-bg-band-border-hover.png');
+	color: #fff;
+	background-color: #30341b;
 }
 
 .patrocina {

@@ -8,7 +8,6 @@ global $wp_post_types;
 // descubre, aprende, haz bands
 $band_pts = array("itinerario","badge","actividad");
 $band_tits = array("Descubre","Aprende","Haz");
-$rombo_classes = array("rombo col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3","rombo col-md-2 col-sm-2","rombo col-md-2 col-sm-2");
 ?>
 
 <div id="top" class="container-full">
@@ -16,35 +15,25 @@ $rombo_classes = array("rombo col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3"
 <header class="aligncenter">
 	<div class="row hair">
 		<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-			<img id="chuerto-imago" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.png" alt="<?php echo CHUERTO_BLOGNAME. " | " . CHUERTO_BLOGDESC; ?>" />
+			<img id="chuerto-imago" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.star.png" alt="<?php echo CHUERTO_BLOGNAME. " | " . CHUERTO_BLOGDESC; ?>" />
 			<h1 class="hideout"><?php echo CHUERTO_BLOGNAME ?></h1>
-			<div class="hideout"><strong><?php echo CHUERTO_BLOGDESC ?></strong></div>
+			<div id="tagline"><strong><?php echo CHUERTO_BLOGDESC ?></strong></div>
 		</div>
 	</div>
 </header>
 <section class="aligncenter">
 	<div class="row hair">
-		<?php
-		$rombo_count = 0;
-		foreach ( $band_pts as $band_pt ) { ?>
-		<div class="<?php echo $rombo_classes[$rombo_count]; ?>">
-			<h2 class="rombo-tit chuerto-smooth"><a href="#<?php echo $band_pt; ?>"><?php echo $wp_post_types[$band_pt]->labels->parent; ?></a></h2>
-			<p><small><?php echo $wp_post_types[$band_pt]->description; ?></small></p>
-		</div>
-		<?php $rombo_count++;
-		} ?>
-	</div>
-	<div class="row hair">
 		<div class="col-md-2 col-md-offset-5">
-			<a class="border-band-white" href="/about">About</a>
+			<a class="btn-chuerto" href="#proyecto">Proyecto</a>
 		</div>
 	</div>
 	<div class="row patrocina">
-		<div class="col-md-4 col-md-offset-4">
+		<div class="col-md-8 col-md-offset-2">
 			<ul class="list-inline">
-				<li><a href="http://openbadges.org"><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-mozilla.png" alt="Mozilla Foundation" /></a></li>
-				<li><a href="http://15muebles.org/"><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-15muebles.png" alt="Proyecto 15 muebles" /></a></li>
-				<li><a href="http://museoreinasofia.es/"><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-mncars.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></a></li>
+			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-dark.png" alt="Hábitat Madrid" /></li>
+			<li><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-dark.png" alt="Red de Huertos Urbanos de Madrid" /></li>
+			<li><img class="patrocina-ter" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-dark.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></li>
+			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-intermediae-dark.png" alt="Intermediae" /></li>
 			</ul>
 		</div>
 	</div>
