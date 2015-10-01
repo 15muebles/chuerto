@@ -1,35 +1,35 @@
 <?php
 // theme setup main function
-add_action( 'after_setup_theme', 'quincem_theme_setup' );
-function quincem_theme_setup() {
+add_action( 'after_setup_theme', 'chuerto_theme_setup' );
+function chuerto_theme_setup() {
 
 	// theme global vars
-	if (!defined('QUINCEM_BLOGNAME'))
-	    define('QUINCEM_BLOGNAME', get_bloginfo('name'));
+	if (!defined('CHUERTO_BLOGNAME'))
+	    define('CHUERTO_BLOGNAME', get_bloginfo('name'));
 
-	if (!defined('QUINCEM_BLOGDESC'))
-	    define('QUINCEM_BLOGDESC', get_bloginfo('description','display'));
+	if (!defined('CHUERTO_BLOGDESC'))
+	    define('CHUERTO_BLOGDESC', get_bloginfo('description','display'));
 
-	if (!defined('QUINCEM_BLOGURL'))
-	    define('QUINCEM_BLOGURL', get_bloginfo('url'));
+	if (!defined('CHUERTO_BLOGURL'))
+	    define('CHUERTO_BLOGURL', get_bloginfo('url'));
 
-	if (!defined('QUINCEM_BLOGTHEME'))
-	    define('QUINCEM_BLOGTHEME', get_bloginfo('template_directory'));
+	if (!defined('CHUERTO_BLOGTHEME'))
+	    define('CHUERTO_BLOGTHEME', get_bloginfo('template_directory'));
 
 	/* Set up media options: sizes, featured images... */
-	add_action( 'init', 'quincem_media_options' );
-	add_filter( 'image_size_names_choose', 'quincem_custom_sizes' );
+	add_action( 'init', 'chuerto_media_options' );
+	add_filter( 'image_size_names_choose', 'chuerto_custom_sizes' );
 
 	/* Load JavaScript files on the 'wp_enqueue_scripts' action hook. */
-	add_action( 'wp_enqueue_scripts', 'quincem_load_scripts' );
+	add_action( 'wp_enqueue_scripts', 'chuerto_load_scripts' );
 
 	// Custom post types
-	add_action( 'init', 'quincem_create_post_type', 0 );
+	add_action( 'init', 'chuerto_create_post_type', 0 );
 
 	// Extra meta boxes in editor
-	add_filter( 'cmb_meta_boxes', 'quincem_metaboxes' );
+//	add_filter( 'cmb_meta_boxes', 'chuerto_metaboxes' );
 	// Initialize the metabox class
-	add_action( 'init', 'quincem_init_metaboxes', 9999 );
+//	add_action( 'init', 'chuerto_init_metaboxes', 9999 );
 
 	// excerpt support in pages
 	add_post_type_support( 'page', 'excerpt' );
@@ -39,15 +39,15 @@ function quincem_theme_setup() {
 	add_post_type_support( 'badge', 'page-attributes' );
 
 	// disable admin bar in front end
-	add_filter('show_admin_bar', '__return_false');
+//	add_filter('show_admin_bar', '__return_false');
 
 	// adding classes to post_class()
-	add_filter('post_class', 'quincem_classes');
+	add_filter('post_class', 'chuerto_classes');
 
-	//add_action('wp_insert_post', 'quincem_write_badge_metadata');
-	add_action('save_post', 'quincem_write_badge_metadata');
-	//add_action('wp_insert_post', 'quincem_write_earner_metadata');
-	add_action('draft_to_publish', 'quincem_earner_admited');
+	//add_action('wp_insert_post', 'chuerto_write_badge_metadata');
+//	add_action('save_post', 'chuerto_write_badge_metadata');
+	//add_action('wp_insert_post', 'chuerto_write_earner_metadata');
+//	add_action('draft_to_publish', 'chuerto_earner_admited');
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array(
@@ -55,12 +55,12 @@ function quincem_theme_setup() {
 	) );
 
 	// register and init widget bars
-	add_action( 'widgets_init', 'quincem_widgets_init' );
+	add_action( 'widgets_init', 'chuerto_widgets_init' );
 
-} // end quincem theme setup function
+} // end chuerto theme setup function
 
 // register and init widget bars
-function quincem_widgets_init() {
+function chuerto_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Barra lateral derecha del blog',
@@ -75,7 +75,7 @@ function quincem_widgets_init() {
 
 
 // set up media options
-function quincem_media_options() {
+function chuerto_media_options() {
 	/* Add theme support for post thumbnails (featured images). */
 	add_theme_support( 'post-thumbnails', array( 'post','page','badge','itinerario','actividad','earner') );
 
@@ -96,7 +96,7 @@ function quincem_media_options() {
 	update_option('large_size_h', 0);
 } // end set up media options
 
-function quincem_custom_sizes( $sizes ) {
+function chuerto_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'icon' => __('Icon'),
         'small' => __('Small'),
@@ -106,7 +106,7 @@ function quincem_custom_sizes( $sizes ) {
 }
 
 // load js scripts to avoid conflicts
-function quincem_load_scripts() {
+function chuerto_load_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-css', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'fontsquirrel-css', get_template_directory_uri() . '/fonts/stylesheet.css' );
@@ -158,7 +158,7 @@ function quincem_load_scripts() {
 } // end load js scripts to avoid conflicts
 
 // register post types
-function quincem_create_post_type() {
+function chuerto_create_post_type() {
 	// Módulo post type
 	register_post_type( 'badge', array(
 		'labels' => array(
@@ -181,7 +181,7 @@ function quincem_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		'menu_icon' => get_template_directory_uri() . '/images/quincem-dashboard-pt-badge.png',
+		'menu_icon' => get_template_directory_uri() . '/images/chuerto-dashboard-pt-badge.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','trackbacks','thumbnail'),
@@ -212,7 +212,7 @@ function quincem_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		'menu_icon' => get_template_directory_uri() . '/images/quincem-dashboard-pt-itinerario.png',
+		'menu_icon' => get_template_directory_uri() . '/images/chuerto-dashboard-pt-itinerario.png',
 		'hierarchical' => true, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','trackbacks','thumbnail','page-attributes' ),
@@ -243,7 +243,7 @@ function quincem_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		'menu_icon' => get_template_directory_uri() . '/images/quincem-dashboard-pt-actividad.png',
+		'menu_icon' => get_template_directory_uri() . '/images/chuerto-dashboard-pt-actividad.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title', 'editor','excerpt','author','trackbacks','thumbnail' ),
@@ -274,7 +274,7 @@ function quincem_create_post_type() {
 		'publicly_queryable' => true,
 		'exclude_from_search' => false,
 		'menu_position' => 5,
-		'menu_icon' => get_template_directory_uri() . '/images/quincem-dashboard-pt-earner.png',
+		'menu_icon' => get_template_directory_uri() . '/images/chuerto-dashboard-pt-earner.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
 		'supports' => array('title','author','trackbacks','thumbnail'),
@@ -286,7 +286,7 @@ function quincem_create_post_type() {
 } // end register post types
 
 // get all posts from a post type to be used in select or multicheck forms
-function quincem_get_list($post_type) {
+function chuerto_get_list($post_type) {
 	$posts = get_posts(array(
 		'posts_per_page' => -1,
 		'post_type' => $post_type,
@@ -300,17 +300,17 @@ function quincem_get_list($post_type) {
 }
 
 //Add metaboxes to several post types edit screen
-function quincem_metaboxes( $meta_boxes ) {
-	$prefix = '_quincem_'; // Prefix for all fields
+function chuerto_metaboxes( $meta_boxes ) {
+	$prefix = '_chuerto_'; // Prefix for all fields
 
 	// get data for select and multicheck fields
-	//$itinerarios = quincem_get_list("itinerario");
-	$actividades = quincem_get_list("actividad");
-	$badges = quincem_get_list("badge");
+	//$itinerarios = chuerto_get_list("itinerario");
+	$actividades = chuerto_get_list("actividad");
+	$badges = chuerto_get_list("badge");
 
 	// CUSTOM FIELDS FOR ITINERARIOS AND BADGES
 	$meta_boxes[] = array(
-		'id' => 'quincem_subtit',
+		'id' => 'chuerto_subtit',
 		'title' => 'Subtítulo',
 		'pages' => array('itinerario','badge'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
@@ -326,7 +326,7 @@ function quincem_metaboxes( $meta_boxes ) {
 		),
 	);
 	$meta_boxes[] = array(
-		'id' => 'quincem_icono',
+		'id' => 'chuerto_icono',
 		'title' => 'Icono',
 		'pages' => array('itinerario','badge'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
@@ -347,7 +347,7 @@ function quincem_metaboxes( $meta_boxes ) {
 	///
 	// modulos multicheckbox
 	$meta_boxes[] = array(
-		'id' => 'quincem_modulos',
+		'id' => 'chuerto_modulos',
 		'title' => 'Módulos en el itinerario',
 		'pages' => array('itinerario'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
@@ -368,7 +368,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// actividades multicheckbox
 	$meta_boxes[] = array(
-		'id' => 'quincem_actividades',
+		'id' => 'chuerto_actividades',
 		'title' => 'Actividades',
 		'pages' => array('badge'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
@@ -386,7 +386,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// modulos multicheckbox
 	$meta_boxes[] = array(
-		'id' => 'quincem_dependencias',
+		'id' => 'chuerto_dependencias',
 		'title' => 'Dependencias (otros badges)',
 		'pages' => array('badge'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
@@ -404,7 +404,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// Cómo ganar el badge
 	$meta_boxes[] = array(
-		'id' => 'quincem_badge_como',
+		'id' => 'chuerto_badge_como',
 		'title' => 'Cómo ganar el badge',
 		'pages' => array('badge'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
@@ -422,7 +422,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// Material de trabajo
 	$meta_boxes[] = array(
-		'id' => 'quincem_material',
+		'id' => 'chuerto_material',
 		'title' => 'Material de trabajo',
 		'pages' => array('badge'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
@@ -443,7 +443,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// On/Off, escenario, fechas for actividades
 	$meta_boxes[] = array(
-		'id' => 'quincem_actividad_meta',
+		'id' => 'chuerto_actividad_meta',
 		'title' => 'Información sobre la actividad',
 		'pages' => array('actividad'), // post type
 		'context' => 'side', //  'normal', 'advanced', or 'side'
@@ -480,7 +480,7 @@ function quincem_metaboxes( $meta_boxes ) {
 	);
 	// Info de contacto for actividades
 	$meta_boxes[] = array(
-		'id' => 'quincem_contact',
+		'id' => 'chuerto_contact',
 		'title' => 'Contacto',
 		'pages' => array('actividad'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
@@ -501,7 +501,7 @@ function quincem_metaboxes( $meta_boxes ) {
 
 	// mail, evidence, badge
 	$meta_boxes[] = array(
-		'id' => 'quincem_earner_meta',
+		'id' => 'chuerto_earner_meta',
 		'title' => 'Información sobre el earner',
 		'pages' => array('earner'), // post type
 		'context' => 'normal', //  'normal', 'advanced', or 'side'
@@ -542,14 +542,14 @@ function quincem_metaboxes( $meta_boxes ) {
 } // end Add metaboxes
 
 // Initialize the metabox class
-function quincem_init_metaboxes() {
+function chuerto_init_metaboxes() {
 	if ( !class_exists( 'cmb_Meta_Box' ) ) {
 		require_once( 'lib/metabox/init.php' );
 	}
 } // end Init metaboxes
 
 // adding classes to post_class()
-function quincem_classes($classes) {
+function chuerto_classes($classes) {
 	// add bootstrap classes to post elements
 	global $post;
 	if ( is_front_page() ) { $new_classes = array("thumbnail");}
@@ -561,7 +561,7 @@ function quincem_classes($classes) {
 } // end adding classes to post_class()
 
 // create badge json metadata
-function quincem_write_badge_metadata() {
+function chuerto_write_badge_metadata() {
 
 	global $post;
 	if ( $post ) {
@@ -575,7 +575,7 @@ function quincem_write_badge_metadata() {
 		$badge_img = $_SERVER['DOCUMENT_ROOT'] . "/openbadges/images/badge-" .$post->post_name. ".png";
 
 		$perma = get_permalink($post->ID);
-		$subtit = get_post_meta( $post->ID, '_quincem_subtit',true );
+		$subtit = get_post_meta( $post->ID, '_chuerto_subtit',true );
 		$wp_img_id = get_post_thumbnail_id( $post->ID );
  
 		$data = '{
@@ -605,7 +605,7 @@ function quincem_write_badge_metadata() {
 } // end create badge json metadata
 
 // create earner json metadata and notificate him/her by mail
-function quincem_earner_admited() {
+function chuerto_earner_admited() {
 
 	global $post;
 	if ( $post ) {
@@ -617,12 +617,12 @@ function quincem_earner_admited() {
 	//if ( $post->post_type == 'earner' && $post->post_status == 'publish' ) {
 	if ( $post->post_type == 'earner' ) {
 
-		$earner_name = get_post_meta( $post->ID, '_quincem_earner_name',true );
-		$earner_mail = get_post_meta( $post->ID, '_quincem_earner_mail',true );
-		$earner_evidence = get_post_meta( $post->ID, '_quincem_earner_material',true );
+		$earner_name = get_post_meta( $post->ID, '_chuerto_earner_name',true );
+		$earner_mail = get_post_meta( $post->ID, '_chuerto_earner_mail',true );
+		$earner_evidence = get_post_meta( $post->ID, '_chuerto_earner_material',true );
 		$earner_date = $post->post_date;
-		$earner_badge = get_post_meta( $post->ID, '_quincem_earner_badge',true );
-		$earner_actividad = get_post_meta( $post->ID, '_quincem_earner_actividad',true );
+		$earner_badge = get_post_meta( $post->ID, '_chuerto_earner_badge',true );
+		$earner_actividad = get_post_meta( $post->ID, '_chuerto_earner_actividad',true );
 		$earner_perma = get_permalink($post->ID);
 
 		$args = array(
@@ -696,7 +696,7 @@ function quincem_earner_admited() {
 
 
 // reclaim a badge form
-function quincem_reclaim_badge_form() {
+function chuerto_reclaim_badge_form() {
 
 	$action = get_permalink();
 
@@ -705,7 +705,7 @@ function quincem_reclaim_badge_form() {
 		$badge_from = sanitize_text_field( $_GET['badge_id']);
 	} else { $badge_from = ""; }
 
-	$badges = quincem_get_list("badge");
+	$badges = chuerto_get_list("badge");
 	$options_badges = "<option></option>";
 	while ( $badge = current($badges) ) {
 		if ( $badge_from == key($badges) ) {
@@ -717,29 +717,29 @@ function quincem_reclaim_badge_form() {
 	}
 
 	$form_out = "
-<form id='quincem-form-content' method='post' action='" .$action. "' enctype='multipart/form-data'>
+<form id='chuerto-form-content' method='post' action='" .$action. "' enctype='multipart/form-data'>
 <div class='row'>
 <div class='form-horizontal col-md-10'>
 <legend>Tus datos</legend>
 <div class='form-group'>
-<label for='quincem-form-badge-name' class='col-sm-4 control-label'>Nombre</label>
+<label for='chuerto-form-badge-name' class='col-sm-4 control-label'>Nombre</label>
 <div class='col-sm-6'>
-    <input class='form-control req' type='text' value='' name='quincem-form-badge-name' />
+    <input class='form-control req' type='text' value='' name='chuerto-form-badge-name' />
 </div>
 </div>
 
 <div class='form-group'>
-<label for='quincem-form-badge-mail' class='col-sm-4 control-label'>Dirección de correo electrónico</label>
+<label for='chuerto-form-badge-mail' class='col-sm-4 control-label'>Dirección de correo electrónico</label>
 <div class='col-sm-6'>
-    <input class='form-control req' type='text' value='' name='quincem-form-badge-mail' />
+    <input class='form-control req' type='text' value='' name='chuerto-form-badge-mail' />
     <p class='help-block'><small>En el caso de que ya tengas una mochila de badges (Mozilla Backpack) <strong>esta dirección debe ser la misma de tu cuenta Persona</strong>.</small></p>
 </div>
 </div>
 
 <div class='form-group'>
-    <label for='quincem-form-badge-avatar' class='col-sm-4 control-label'>Imagen de perfil</label>
+    <label for='chuerto-form-badge-avatar' class='col-sm-4 control-label'>Imagen de perfil</label>
 <div class='col-sm-6'>
-    <input type='file' name='quincem-form-badge-avatar' />
+    <input type='file' name='chuerto-form-badge-avatar' />
 	<input type='hidden' name='MAX_FILE_SIZE' value='4000000' />
     <p class='help-block'><small>Tu imagen aparecerá en las listas de ganadores del badge. El archivo <strong>no puede ser más grande de 4MB</strong> y <strong>debe ser una archivo de tipo JPG, PNG o GIF</strong>.</small></p>
 </div>
@@ -747,31 +747,31 @@ function quincem_reclaim_badge_form() {
 
 <legend>Datos del badge que solicitas</legend>
 <div class='form-group'>
-<label for='quincem-form-badge-actividad' class='col-sm-4 control-label'>Actividad realizada</label>
+<label for='chuerto-form-badge-actividad' class='col-sm-4 control-label'>Actividad realizada</label>
 <div class='col-sm-6'>
-    <input class='form-control req' type='text' value='' name='quincem-form-badge-actividad' />
+    <input class='form-control req' type='text' value='' name='chuerto-form-badge-actividad' />
 </div>
 </div>
 
 <div class='form-group'>
-<label for='quincem-form-badge-badge' class='col-sm-4 control-label'>Badge solicitado</label>
+<label for='chuerto-form-badge-badge' class='col-sm-4 control-label'>Badge solicitado</label>
 <div class='col-sm-6'>
-	<select class='form-control req' name='quincem-form-badge-badge' maxlenght='11' >
+	<select class='form-control req' name='chuerto-form-badge-badge' maxlenght='11' >
 		" .$options_badges. "
 	</select>
 </div>
 </div>
 
 <div class='form-group'>
-<label for='quincem-form-badge-material' class='col-sm-4 control-label'>Dirección URL al material producido</label>
+<label for='chuerto-form-badge-material' class='col-sm-4 control-label'>Dirección URL al material producido</label>
 <div class='col-sm-6'>
-    <input class='form-control req' type='text' value='' name='quincem-form-badge-material' />
+    <input class='form-control req' type='text' value='' name='chuerto-form-badge-material' />
 </div>
 </div>
 
 <div class='form-group'>
     <div class='col-sm-offset-4 col-sm-6'>
-    <input class='btn btn-default' type='submit' value='Enviar' name='quincem-form-badge-submit' />
+    <input class='btn btn-default' type='submit' value='Enviar' name='chuerto-form-badge-submit' />
 	<span class='help-block'><small><strong>Todos los campos son requeridos excepto la imagen</strong>.</small></span>
     </div>
   </div>
@@ -786,7 +786,7 @@ function quincem_reclaim_badge_form() {
 } // end reclaim a badge form
 
 // insert earner data in database
-function quincem_insert_earner() {
+function chuerto_insert_earner() {
 
 	// messages and locations for redirection
 	$perma = get_permalink();
@@ -805,26 +805,26 @@ function quincem_insert_earner() {
 	}
 	}
 
-	if ( !array_key_exists('quincem-form-badge-submit', $_POST) ) {
-		quincem_reclaim_badge_form();
+	if ( !array_key_exists('chuerto-form-badge-submit', $_POST) ) {
+		chuerto_reclaim_badge_form();
 		return;
 
-	} elseif ( sanitize_text_field( $_POST['quincem-form-badge-submit'] ) != 'Enviar' ) {
-		quincem_reclaim_badge_form();
+	} elseif ( sanitize_text_field( $_POST['chuerto-form-badge-submit'] ) != 'Enviar' ) {
+		chuerto_reclaim_badge_form();
 		echo "har";
 		return;
 	}
 
 	// check if all fields have been filled
 	// sanitize them all
-	$earner_name = sanitize_text_field( $_POST['quincem-form-badge-name'] );
-	$earner_mail = sanitize_email( $_POST['quincem-form-badge-mail'] );
-	$earner_material = sanitize_text_field( $_POST['quincem-form-badge-material'] );
-	$earner_actividad = sanitize_text_field( $_POST['quincem-form-badge-actividad'] );
-	$earner_badge = intval( $_POST['quincem-form-badge-badge'] );
+	$earner_name = sanitize_text_field( $_POST['chuerto-form-badge-name'] );
+	$earner_mail = sanitize_email( $_POST['chuerto-form-badge-mail'] );
+	$earner_material = sanitize_text_field( $_POST['chuerto-form-badge-material'] );
+	$earner_actividad = sanitize_text_field( $_POST['chuerto-form-badge-actividad'] );
+	$earner_badge = intval( $_POST['chuerto-form-badge-badge'] );
 	if ( strlen( $earner_badge ) > 11 ) {
 		echo $error;
-		quincem_reclaim_badge_form();
+		chuerto_reclaim_badge_form();
 		return;
 	}
 	// check that badge exists
@@ -840,27 +840,27 @@ function quincem_insert_earner() {
 		}
 	} else {
 		echo $error;
-		quincem_reclaim_badge_form();
+		chuerto_reclaim_badge_form();
 		return;
 	}
 	// check that all required fields were filled
 	$fields = array(
-		'_quincem_earner_name' => $earner_name,
-		'_quincem_earner_mail' => $earner_mail,
-		'_quincem_earner_actividad' => $earner_actividad,
-		'_quincem_earner_badge' => $earner_badge,
-		'_quincem_earner_material' => $earner_material,
+		'_chuerto_earner_name' => $earner_name,
+		'_chuerto_earner_mail' => $earner_mail,
+		'_chuerto_earner_actividad' => $earner_actividad,
+		'_chuerto_earner_badge' => $earner_badge,
+		'_chuerto_earner_material' => $earner_material,
 	);
 	foreach ( $fields as $field ) {
 		if ( $field == '' ) {
 			echo $error;
-			quincem_reclaim_badge_form();
+			chuerto_reclaim_badge_form();
 			return;
 		}
 	}
 	// checking if image file have the right format and size
-	if ( array_key_exists('quincem-form-badge-avatar', $_FILES) ) {
-		$file = $_FILES['quincem-form-badge-avatar'];
+	if ( array_key_exists('chuerto-form-badge-avatar', $_FILES) ) {
+		$file = $_FILES['chuerto-form-badge-avatar'];
 		if ( $file['name'] != '' ) {
 			$finfo = new finfo(FILEINFO_MIME_TYPE);
 			$mime = $finfo->file($file['tmp_name']); 
@@ -868,12 +868,12 @@ function quincem_insert_earner() {
 			if ( $mime == 'image/png' || $mime == 'image/jpg' || $mime == 'image/jpeg' || $mime == 'image/gif' ) {}
 			else {
 				echo $error;
-				quincem_reclaim_badge_form();
+				chuerto_reclaim_badge_form();
 				return;
 			}
 			if ( $file['size'] > '4000000' ) {
 				echo $error;
-				quincem_reclaim_badge_form();
+				chuerto_reclaim_badge_form();
 				return;
 			}
 		} // if filename is not empty
@@ -895,7 +895,7 @@ function quincem_insert_earner() {
 
 	if ( $earner_id == 0 ) {
 		echo $error;
-		quincem_reclaim_badge_form();
+		chuerto_reclaim_badge_form();
 		return;
 	}
 
@@ -912,8 +912,8 @@ function quincem_insert_earner() {
 	$uploaddir = realpath($upload_dir);
 
 	// if image has been added to form
-	if ( array_key_exists('quincem-form-badge-avatar', $_FILES) ) {
-		$file = $_FILES['quincem-form-badge-avatar'];
+	if ( array_key_exists('chuerto-form-badge-avatar', $_FILES) ) {
+		$file = $_FILES['chuerto-form-badge-avatar'];
 		$filename = basename($file['name']); // file name in client machine
 		$filename = trim($filename); // removing spaces at the begining and end
 		$filename = ereg_replace(" ", "-", $filename); // removing spaces inside the name
