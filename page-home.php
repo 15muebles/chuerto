@@ -24,12 +24,12 @@ $band_tits = array("Itinerario","Agenda","Proyecto");
 </header>
 <section class="aligncenter">
 	<div class="row hair">
-		<div class="col-md-2 col-md-offset-5 chuerto-smooth">
+		<div class="col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 chuerto-smooth">
 			<a class="btn-chuerto" href="#proyecto">Proyecto</a>
 		</div>
 	</div>
 	<div class="row patrocina">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<ul class="list-inline">
 			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-dark.png" alt="Hábitat Madrid" /></li>
 			<li><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-dark.png" alt="Red de Huertos Urbanos de Madrid" /></li>

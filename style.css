@@ -103,6 +103,9 @@ body { padding-top: 50px; }
 .epi-itinerario {
 	background-color: #e4de85;
 }
+#navbar-main .active a {
+	color: #30341b !important;
+}
 
 .epi-earner {
 	background-color: #e4de85;
@@ -120,9 +123,6 @@ body { padding-top: 50px; }
 	color: #fff;
 }
 
-#navbar-sec {
-	margin-left: 50px;
-}
 .navbar-socialb {
 	height: 50px;
 	padding-top: 15px;

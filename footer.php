@@ -11,7 +11,7 @@ else { $epi_class = "post"; }
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+		<div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
 			<img class="img-responsive" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.png" alt="<?php echo CHUERTO_BLOGNAME; ?>" />
 		</div>
 	</div><!-- .row -->
@@ -21,7 +21,7 @@ else { $epi_class = "post"; }
 <div id="trasepi" class="container-full">
 <div class="container">
 	<div class="row patrocina">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 		<ul class="list-inline">
 			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-light.png" alt="Hábitat Madrid" /></li>
 			<li><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-light.png" alt="Red de Huertos Urbanos de Madrid" /></li>
