@@ -21,9 +21,14 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 
 	$item_date_begin = "";
 	$item_date_end = "";
-	$item_desc = "";
-	$item_icons_out = "";
-	$item_img_size = array(75,75);
+	$item_desc = get_the_excerpt();
+	$item_icon_id = get_post_meta( $post->ID, '_chuerto_icono_id',true );	
+	if ( $item_icon_id != '' ) {
+		$item_icon = wp_get_attachment_image( $item_icon_id, 'icon' );
+		$item_icons_out = "<ul class='list-inline'><li>" .$item_icon. "</li></ul>";
+	} else { $item_icons_out = ""; }
+
+	$item_img_size = array(100,100);
 
 
 

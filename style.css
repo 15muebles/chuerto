@@ -53,6 +53,12 @@ h1, h3 {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
+.badge {
+	min-height: inherit;
+	font-size: initial;
+	font-weight: normal;
+	white-space: inherit;
+}
 
 /* header navbar & footer */
 body { padding-top: 50px; }
@@ -260,14 +266,14 @@ img.patrocina-ter {
 
 
 /* home mosac loop */
+.home .mosac-item:hover {
+	background-color: #e4de85;
+}
 .home .mosac-item:hover img {
 	opacity: 0.7;
 }
 .home .mosac-item:hover a {
 	color: #bd1622;
-}
-.home .mosac-item:hover .mosac-item-desc {
-	color: #fff;
 }
 .mosac-item-tit {
 	margin: 0;
