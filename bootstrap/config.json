@@ -398,7 +398,6 @@
     "pagination.less",
     "pager.less",
     "labels.less",
-    "badges.less",
     "jumbotron.less",
     "thumbnails.less",
     "alerts.less",
@@ -430,5 +429,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=4a39577124bd200d0085"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=f34bd92ae4e06599fe75"
 }
