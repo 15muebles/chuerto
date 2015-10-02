@@ -27,9 +27,9 @@ function chuerto_theme_setup() {
 	add_action( 'init', 'chuerto_create_post_type', 0 );
 
 	// Extra meta boxes in editor
-//	add_filter( 'cmb_meta_boxes', 'chuerto_metaboxes' );
+	add_filter( 'cmb_meta_boxes', 'chuerto_metaboxes' );
 	// Initialize the metabox class
-//	add_action( 'init', 'chuerto_init_metaboxes', 9999 );
+	add_action( 'init', 'chuerto_init_metaboxes', 9999 );
 
 	// excerpt support in pages
 	add_post_type_support( 'page', 'excerpt' );
