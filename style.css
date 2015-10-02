@@ -410,9 +410,8 @@ img.patrocina-ter {
 .page-template-page-about-php .container-full {
 	width: 100%;
 	margin: 0 auto;
-	color: #fff;
 	padding: 70px 0;
-	background-color: #9fcfcf;
+	background-color: #e4de85;
 }
 .subpage {
 	padding: 70px 0;
@@ -466,14 +465,14 @@ img.patrocina-ter {
 }
 
 /* Blog page and posts archives */
-#blog a { color: #fff; text-decoration: underline; }
-#blog a:hover { text-decoration: none; }
+/*#blog a { color: #fff; text-decoration: underline; }
+#blog a:hover { text-decoration: none; }*/
 .blog-article {
 	margin-bottom: 80px;
 }
 .blog-header { margin-bottom: 1em; }
 .blog-tit { margin: 0; line-height: 1.3em; }
-.blog-tit a { color: #9fcfcf !important; background-color: #fff; text-decoration: none !important; }
+.blog-tit a { color: #30341b !important; background-color: #969e4f; text-decoration: none !important; }
 .blog-tit a:hover { opacity: 0.9; }
 .blog-meta-tit { text-transform: uppercase; }
 .entry-date, .blog-cat-links a { font-weight: bold; }
