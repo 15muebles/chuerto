@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 		);
 	});
 
-	// rombo and navbar items click event
+	// buttons and navbar items click event
 	$(".chuerto-smooth a[href^='#']").on('click', function(e) {
 		// prevent default anchor click behavior
 		e.preventDefault();

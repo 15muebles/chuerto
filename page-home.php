@@ -24,7 +24,7 @@ $band_tits = array("Itinerario","Agenda","Proyecto");
 </header>
 <section class="aligncenter">
 	<div class="row hair">
-		<div class="col-md-2 col-md-offset-5">
+		<div class="col-md-2 col-md-offset-5 chuerto-smooth">
 			<a class="btn-chuerto" href="#proyecto">Proyecto</a>
 		</div>
 	</div>
