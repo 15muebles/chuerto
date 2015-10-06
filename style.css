@@ -69,9 +69,10 @@ body { padding-top: 50px; }
 #main-tit {
 	font-family: 'blanchcondensed_inline',sans-serif;
 	font-size: 54px;
-	line-height: 0.8em;
+	line-height: 38px;
 	color: #fff;
 	margin-bottom: 0;
+	padding: 5px 15px 15px
 }
 
 .navbar-default,
@@ -147,7 +148,7 @@ body { padding-top: 50px; }
 	background-repeat: repeat-x;
 	background-size: 1024px auto;
 	height: 369px;
-	padding: 20px 0;
+	padding: 9px 0;
 }
 #epi .container {
 	margin-top: 14px;
@@ -191,7 +192,7 @@ body { padding-top: 50px; }
 }
 
 #chuerto-imago {
-	width: 233px;
+	width: 165px;
 }
 #main-subtit {
 	font-family: 'blanchcondensed_inline',sans-serif;
@@ -253,7 +254,6 @@ img.patrocina-ter {
 	text-transform: uppercase;
 }
 .sec-desc {
-	font-size: 18px;
 	padding-top: 3px;
 	color: #30341b;
 }
@@ -266,9 +266,6 @@ img.patrocina-ter {
 
 
 /* home mosac loop */
-.home .mosac-item:hover {
-	background-color: #e4de85;
-}
 .home .mosac-item:hover img {
 	opacity: 0.7;
 }
@@ -304,8 +301,12 @@ img.patrocina-ter {
 .itinerario .mosac-item-subtit:after {
 	content: ")";
 }
-.mosac-item-desc {
-	font-size: 85%;
+#badge .mosac-item-desc {
+	font-size: 80%;
+	margin-top: 1em;
+}
+#actividad .mosac-item-desc {
+	font-size: 90%;
 	margin-top: 1em;
 }
 .mosac-item-icons {

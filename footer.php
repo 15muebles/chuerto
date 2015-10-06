@@ -12,7 +12,7 @@ else { $epi_class = "post"; }
 <div class="container">
 	<div class="row">
 		<div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
-			<img class="img-responsive" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.png" alt="<?php echo CHUERTO_BLOGNAME; ?>" />
+			<img class="img-responsive" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-imago.star.png" alt="<?php echo CHUERTO_BLOGNAME; ?>" />
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
@@ -23,10 +23,10 @@ else { $epi_class = "post"; }
 	<div class="row patrocina">
 	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 		<ul class="list-inline">
-			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-light.png" alt="Hábitat Madrid" /></li>
-			<li><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-light.png" alt="Red de Huertos Urbanos de Madrid" /></li>
-			<li><img class="patrocina-ter" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-light.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></li>
-			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-intermediae-light.png" alt="Intermediae" /></li>
+			<li><a href="http://www.programadeactividadesambientales.com/" class="patrocina-sec"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-light.png" alt="Hábitat Madrid" /></a></li>
+			<li><a class="patrocina-main" href="https://redhuertosurbanosmadrid.wordpress.com/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-light.png" alt="Red de Huertos Urbanos de Madrid" /></a></li>
+			<li><a class="patrocina-ter" href="http://ciudad-escuela.org/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-light.png" alt="Ciudad Escuela. Pedagogía urbana open source" /></a></li>
+			<li><a class="patrocina-sec" href="http://intermediae.es/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-intermediae-light.png" alt="Intermediae" /></a></li>
 		</ul>
 	</div>
 	</div><!-- .row -->

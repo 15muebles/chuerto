@@ -25,7 +25,7 @@ if ( $band_pts[$band_count] == 'itinerario' ) {
 	$item_icon_id = get_post_meta( $post->ID, '_chuerto_icono_id',true );	
 	if ( $item_icon_id != '' ) {
 		$item_icon = wp_get_attachment_image( $item_icon_id, 'icon' );
-		$item_icons_out = "<ul class='list-inline'><li>" .$item_icon. "</li></ul>";
+		$item_icons_out = "<ul class='list-inline'><li><img src='" .CHUERTO_BLOGTHEME. "/images/chuerto-itinerario-huerto-icono.png' alt='Itinerario Ciudad huerto' /></li></ul>";
 	} else { $item_icons_out = ""; }
 
 	$item_img_size = array(100,100);

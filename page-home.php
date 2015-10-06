@@ -31,10 +31,10 @@ $band_tits = array("Itinerario","Agenda","Proyecto");
 	<div class="row patrocina">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<ul class="list-inline">
-			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-dark.png" alt="Hábitat Madrid" /></li>
-			<li><img class="patrocina-main" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-dark.png" alt="Red de Huertos Urbanos de Madrid" /></li>
-			<li><img class="patrocina-ter" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-dark.png" alt="Museo Nacional Centro de Arte Reina Sofia" /></li>
-			<li><img class="patrocina-sec" src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-intermediae-dark.png" alt="Intermediae" /></li>
+			<li><a href="http://www.programadeactividadesambientales.com/" class="patrocina-sec"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-dark.png" alt="Hábitat Madrid" /></a></li>
+			<li><a class="patrocina-main" href="https://redhuertosurbanosmadrid.wordpress.com/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-dark.png" alt="Red de Huertos Urbanos de Madrid" /></a></li>
+			<li><a class="patrocina-ter" href="http://ciudad-escuela.org/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-dark.png" alt="Ciudad Escuela. Pedagogía urbana open source" /></a></li>
+			<li><a class="patrocina-sec" href="http://intermediae.es/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-intermediae-dark.png" alt="Intermediae" /></a></li>
 			</ul>
 		</div>
 	</div>
@@ -235,7 +235,7 @@ foreach ( $band_pts as $band_pt ) {
 		<div class="container">
 		<section>
 			<header class="sec-header row hair">
-			<div class="col-md-12 col-sm-12">
+			<div class="col-sm-12">
 				<div class="sec-tit">
 					<h2><?php echo $band_tit; ?></h2>
 					<div class="sec-subtit"><?php the_title(); ?></div>
@@ -245,7 +245,7 @@ foreach ( $band_pts as $band_pt ) {
 			</header><!-- .sec-header .row .hair-->
 
 			<div class="row hair">
-				<div class="col-md-8 col-sm-8"><?php the_content(); ?></div>
+				<div class="col-sm-12"><?php the_content(); ?></div>
 			</div><!-- .row .hair -->
 		</section>
 		</div><!-- .container -->
