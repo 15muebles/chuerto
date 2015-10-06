@@ -45,7 +45,7 @@ if ( is_single() || is_page() && !is_front_page() ) {
 		$img_array = wp_get_attachment_image_src($img_id,'large', true);
 		$metaimg = $img_array[0];
 	} else {
-		$metaimg = "http://ciudad-escuela.org/wp-content/themes/montera34/screenshot.png";
+		$metaimg = "http://ciudad-huerto.org/ciudad-huerto-web.jpg";
 	}
 	$metaperma = get_permalink();
 
@@ -58,6 +58,7 @@ if ( is_single() || is_page() && !is_front_page() ) {
 	$metatit = $term->name;
 	$metatype = "blog";
 	$metaperma = "http://ciudad-escuela.org/seccion/".$term->slug;
+	$metaimg = "http://ciudad-huerto.org/ciudad-huerto-web.jpg";
 
 } elseif ( is_tag() ) {
 	$term =	$wp_query->queried_object;
@@ -67,6 +68,7 @@ if ( is_single() || is_page() && !is_front_page() ) {
 	$metatit = $term->name;
 	$metatype = "blog";
 	$metaperma = "http://ciudad-escuela.org/etiqueta/".$term->slug;
+	$metaimg = "http://ciudad-huerto.org/ciudad-huerto-web.jpg";
 
 } else {
 	$metadesc = CHUERTO_BLOGDESC;
@@ -74,7 +76,7 @@ if ( is_single() || is_page() && !is_front_page() ) {
 	$metadesc_fb = CHUERTO_BLOGDESC;
 	$metatit = CHUERTO_BLOGNAME;
 	$metatype = "website";
-	$metaimg = "http://ciudad-escuela.org/wp-content/themes/15muebles/images/chuerto-imago.png";
+	$metaimg = "http://ciudad-huerto.org/ciudad-huerto-web.jpg";
 	$metaperma = CHUERTO_BLOGURL;
 }
 ?>
@@ -83,7 +85,7 @@ if ( is_single() || is_page() && !is_front_page() ) {
 <meta content="15muebles" name="author" />
 <meta name="title" content="<?php echo $metatit ?>" />
 <meta content="<?php echo $metadesc ?>" name="description" />
-<meta content="Pedagogía abierta, pedagogía urbana, pedagogía opensource, pedagogía urbana abierta, escuela abierta, Ciudad Escuela, 15muebles, Open Badges, aprendizaje no reglado, Madrid, Zuloark, Basurama, Domenico Di Siena, Alberto Corsín, Adolfo Estalella, Alfonso Sánchez Uzábal" name="keywords" />
+<meta content="Pedagogía abierta, pedagogía urbana, pedagogía opensource, pedagogía urbana abierta, escuela abierta, Ciudad Escuela, 15muebles, Open Badges, aprendizaje no reglado, Madrid, Zuloark, Basurama, Domenico Di Siena, Alberto Corsín, Adolfo Estalella, Alfonso Sánchez Uzábal, Red de Huerto Urbanos de Madrid, huertos urbanos" name="keywords" />
 <!-- facebook meta -->
 <meta property="og:title" content="<?php echo $metatit ?>" />
 <meta property="og:type" content="<?php echo $metatype ?>" />
