@@ -67,9 +67,8 @@ if ( $pt == 'itinerario' ) {
 	if ( $single_como != '' ) {
 		$single_como_out =
 			"<h2>Cómo ganar el badge</h2>"
-			.apply_filters( 'the_content', $single_como ).
-			"<p class='single-solicita'>Si has participado en alguna de las actividades asociadas a este badge puedes <strong><a href='/solicita-tu-badge/?badge_id=" .$post->ID. "'>solicitar este badge</a></strong> para añadirlo a <a href='http://backpack.openbadges.org'>tu backpack</a>.</p>";
-	}
+			.apply_filters( 'the_content', $single_como );
+	} else { $single_como_out = ''; }
 
 	$single_info_out = "";
 
@@ -112,6 +111,14 @@ if ( $pt == 'itinerario' ) {
 		}
 		$single_earners_out .= "</ul>";
 	} else { $single_earners_out = ""; }
+
+	$solicita_out = "
+		<div class='single-aside'>
+			<h3>Solicitar el badge</h3>
+			<p>Si has participado en alguna de las actividades asociadas a este badge puedes solicitar este badge para añadirlo a <a href='http://backpack.openbadges.org'>tu backpack</a>.</p>
+			<p><a class='btn-cescuela' href='http://ciudad-escuela.org/solicita-tu-badge/?ref=chuerto'>Solicita este badge</a></p>
+		</div>
+	";
 
 } elseif ( $pt == 'actividad' ) {
 	$single_subtit = get_post_meta( $post->ID, '_chuerto_escenario', true );
@@ -312,7 +319,7 @@ if ( has_post_thumbnail() ) { $single_logo = get_the_post_thumbnail($post->ID,$s
 
 	</div><!-- .col-md-4 .col-sm-4  -->
 
-	<div class="col-md-6 col-sm-7">
+	<div class="col-md-5 col-sm-5">
 		<section class="single-desc">
 		<?php the_content();
 		echo $single_como_out;
@@ -320,6 +327,13 @@ if ( has_post_thumbnail() ) { $single_logo = get_the_post_thumbnail($post->ID,$s
 		</section>
 
 	</div><!-- .col-md-6 .col-sm-7 -->
+
+
+	<?php if( $pt == 'badge' ) { ?>
+	<aside class="col-md-3 col-sm-3">
+		<?php echo $solicita_out ?>
+	</aside><!-- .col-md-2 .col-sm-2 -->
+	<?php } ?>
 
 	</article><!-- .mosac .row .hair -->
 
