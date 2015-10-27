@@ -554,6 +554,7 @@ function chuerto_classes($classes) {
 	global $post;
 	if ( is_front_page() ) { $new_classes = array("thumbnail");}
 	elseif ( is_single() ) { $new_classes = array("row");}
+	else { return $classes; }
 		foreach( $new_classes as $class ) {
 		        $classes[] = $class;
 		        return $classes;

@@ -694,3 +694,15 @@ styles just for tablets */
 styles just for tablets */
 }
 
+/* Forums */
+.bbpress,
+.bbpress #epi {
+	background-color: #e4de85;
+}
+li.bbp-forum-freshness>a,
+li.bbp-topic-freshness>a,
+li.bbp-forum-freshness .bbp-topic-meta,
+li.bbp-topic-freshness .bbp-topic-meta {
+	display: inline-block;
+	padding: 0 5px;
+}

@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header();
+if ( is_bbpress() ) { $content_class = "col-sm-12"; }
+else { $content_class = "col-md-8 col-sm-8"; }
+?>
 
 <div id="blog" class="container-full">
 <div class="container">
@@ -6,7 +9,7 @@
 			<header class="col-sm-12"><h1 class="parent-tit"><?php the_archive_title(); ?></h1></header>
 	</div>
 	<div class="row">
-		<div class="col-md-8 col-sm-8">
+	<div class="<?php echo $content_class; ?>">
 			<?php if ( have_posts() ) {
 				while ( have_posts() ) : the_post();
 					get_template_part('loop-blog');

@@ -156,7 +156,7 @@ $band_tits = array("Itinerario","Agenda","Proyecto");
 			</ul>
 			<ul id="navbar-sec" class="nav navbar-nav navbar-right">
 					<li><a href="/blog">Blog/Archivo</a></li>
-					<li><a href="/preguntas-frecuentes">Foro</a></li>
+					<li><a href="/foros">Foro</a></li>
 			</ul>
 
 		</div>

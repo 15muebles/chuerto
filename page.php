@@ -1,6 +1,7 @@
 <?php
 get_header();
-
+if ( is_bbpress() ) { $content_class = "col-sm-12"; }
+else { $content_class = "col-md-8 col-sm-9"; }
 if ( have_posts() ) {
 while ( have_posts() ) : the_post();
 
@@ -19,7 +20,7 @@ while ( have_posts() ) : the_post();
 	</header>
 
 	<section class="row page-desc">
-		<div class="col-md-8 col-sm-9">
+		<div class="<?php echo $content_class; ?>">
 			<?php the_content(); ?>
 		</div>
 	</section><!-- #<?php echo $parent_slug; ?> -->
