@@ -553,7 +553,7 @@ function chuerto_classes($classes) {
 	// add bootstrap classes to post elements
 	global $post;
 	if ( is_front_page() ) { $new_classes = array("thumbnail");}
-	elseif ( is_single() ) { $new_classes = array("row");}
+	elseif ( is_single() && !is_bbpress() ) { $new_classes = array("row");}
 	else { return $classes; }
 		foreach( $new_classes as $class ) {
 		        $classes[] = $class;

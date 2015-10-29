@@ -1,17 +1,15 @@
 <?php
 get_header();
-if ( is_bbpress() ) { $content_class = "col-sm-12"; }
-else { $content_class = "col-md-8 col-sm-9"; }
+if ( is_bbpress() ) { $container_id = "id='foros' "; $content_class = "col-sm-12"; }
+else { $container_class = ""; $content_class = "col-md-8 col-sm-9"; }
 if ( have_posts() ) {
 while ( have_posts() ) : the_post();
 
-	// parent page
-	//$parent_slug = $wp_query->query_vars['pagename'];
 	$parent_tit = get_the_title();
 
 	?>
 
-<div class="container-full">
+<div <?php echo $container_id; ?>class="container-full">
 <div class="container">
 	<header class="row">
 		<div class="col-md-12 col-sm-12">
