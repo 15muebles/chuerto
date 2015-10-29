@@ -112,7 +112,11 @@ if ( is_single() || is_page() && !is_front_page() ) {
 //if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-
+<?php if ( is_user_logged_in() ) { ?>
+<style>
+#pre-navbar { top: 32px;}
+</style>
+<?php } ?>
 </head>
 
 <?php // better to use body tag as the main container ?>
