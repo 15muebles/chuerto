@@ -744,7 +744,7 @@ div.bbp-template-notice.info {
 .avatar-14 {
 	display: none;
 }
-.suscription-toggle {
+#subscription-toggle {
 	float: right;
 }
 .bbp-form {
