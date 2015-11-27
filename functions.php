@@ -1036,7 +1036,7 @@ function chuerto_get_earners($badge) {
 		// don't use in production environments
 		// 'Authorization' => 'Basic ' . base64_encode( 'user' . ':' . 'pass' ),
 	    );
-	$url = 'http://ciudad-escuela.localhost/wp-json/quincem/v1/badge/'.$badge.'/earners';
+	$url = 'http://ciudad-escuela.org/wp-json/quincem/v1/badge/'.$badge.'/earners';
 	$response = wp_remote_retrieve_body(
 		wp_remote_request( $url, array (
 			'method'  => 'GET',

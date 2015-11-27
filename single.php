@@ -73,12 +73,9 @@ if ( $pt == 'itinerario' ) {
 	$single_info_out = "";
 
 	$earners = chuerto_get_earners( get_post_meta($post->ID,'_chuerto_quincem_badge',true) );
-//echo count($earners);
-//echo "<pre>";
-//print_r($earners);
-//echo "</pre>";
 
-	if ( $earners['data']['status'] == '404' || $earners == '' ) {
+	if ( array_key_exists('data',$earners) && $earners['data']['status'] == '404' || $earners == '' ) {
+	//if ( is_wp_error($earners['data']['status']) == '404' || $earners == '' ) {
 		//echo $earners->get_error_message();
 		$single_earners_out = ""; 
 	} else {
