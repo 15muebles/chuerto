@@ -72,32 +72,26 @@ if ( $pt == 'itinerario' ) {
 
 	$single_info_out = "";
 
-	$third_loop_args = array(
-		'nopaging' => true,
-		'post_type' => 'earner',
-		'meta_query' => array(
-			array(
-				'key' => '_chuerto_earner_badge',
-				//'value' => '"' .$post->ID. '"',
-				'value' => $post->ID,
-				'compare' => '='
-			)
-		)
-	);
-	$earners = get_posts($third_loop_args);
-	if ( count($earners) > 0 ) {
+	$earners = chuerto_get_earners( get_post_meta($post->ID,'_chuerto_quincem_badge',true) );
+//echo count($earners);
+//echo "<pre>";
+//print_r($earners);
+//echo "</pre>";
+
+	if ( $earners['data']['status'] == '404' || $earners == '' ) {
+		//echo $earners->get_error_message();
+		$single_earners_out = ""; 
+	} else {
 		$single_earners_out = "<ul class='list-inline'>";
 		$earners_script = "";
 		$id_count = 0;
-		foreach ( $earners as $earner ) {
+		foreach ( $earners as $id => $e ) {
 			$id_count++;
-			if ( has_post_thumbnail( $earner->ID ) ) {
-				$earner_avatar = get_the_post_thumbnail( $earner->ID,'bigicon' );
-			} else { $earner_avatar = "<img src='" .CHUERTO_BLOGTHEME. "/images/chuerto-earner-avatar.png' alt='Avatar por omisión en Ciudad Escuela' />"; }
-			$earner_name = get_post_meta( $earner->ID, '_chuerto_earner_name', true );
-			$earner_date = $earner->post_date;
-			$earner_material = get_post_meta( $earner->ID, '_chuerto_earner_material', true );
-			$earner_actividad = get_post_meta( $earner->ID, '_chuerto_earner_actividad', true );
+			$earner_avatar = "<img src='" .$e['avatar']. "' alt='Avatar del usuario' />";
+			$earner_name = $e['name'];
+			$earner_date = $e['date'];
+			$earner_material = $e['material'];
+			$earner_actividad = $e['actividad'];
 			$single_earners_out .= "<li><a id='earner-" .$id_count. "' class='earner-click' title='" .$earner_name. "'>" .$earner_avatar. "</a></li>";
 			$earners_script .= "
 				jQuery('#earner-$id_count').popover({
@@ -110,7 +104,7 @@ if ( $pt == 'itinerario' ) {
 			";
 		}
 		$single_earners_out .= "</ul>";
-	} else { $single_earners_out = ""; }
+	}
 
 	$solicita_out = "
 		<div class='single-aside'>

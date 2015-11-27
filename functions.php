@@ -366,6 +366,24 @@ function chuerto_metaboxes( $meta_boxes ) {
 	// CUSTOM FIELDS FOR BADGES
 	///
 
+	// Badge en Ciudad Escuela
+	$meta_boxes[] = array(
+		'id' => 'chuerto_badge_cescuela',
+		'title' => 'Badge Ciudad Escuela',
+		'pages' => array('badge'), // post type
+		'context' => 'side', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names' => false, // Show field names on the left
+		'fields' => array(
+				array(
+					'name' => 'Badge en Ciudad Escuela',
+					'description' => 'ID del badge equivalente en Ciudad Escuela',
+					'id' => $prefix . 'quincem_badge',
+					'type' => 'text'
+				),
+		),
+	);
+
 	// actividades multicheckbox
 	$meta_boxes[] = array(
 		'id' => 'chuerto_actividades',
@@ -1007,4 +1025,25 @@ Hola ' .$earner_name. ','
 	exit;
 
 } // end insert earner data in database
+
+// get earners via Ciudad Escuela API
+function chuerto_get_earners($badge) {
+
+	if ( $badge == null || $badge == '' ) return;
+
+	// connect to ciudad-escuela Rest API
+	$headers = array (
+		// don't use in production environments
+		// 'Authorization' => 'Basic ' . base64_encode( 'user' . ':' . 'pass' ),
+	    );
+	$url = 'http://ciudad-escuela.localhost/wp-json/quincem/v1/badge/'.$badge.'/earners';
+	$response = wp_remote_retrieve_body(
+		wp_remote_request( $url, array (
+			'method'  => 'GET',
+			// 'headers' => $headers,
+		) )
+	);
+	$response = json_decode($response,TRUE); // if second parameter is set to TRUE, the output is ass. array
+	return $response;
+} // end get earners via Ciudad Escuela API
 ?>
