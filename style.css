@@ -229,6 +229,9 @@ body { padding-top: 50px; }
 .patrocina {
 	margin-bottom: 25px;
 }
+.patrocina .list-inline li {
+	margin: 5px 0;
+}
 img.patrocina-main {
 	margin: 0 10px;
 }

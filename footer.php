@@ -21,8 +21,9 @@ else { $epi_class = "post"; }
 <div id="trasepi" class="container-full">
 <div class="container">
 	<div class="row patrocina">
-	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 		<ul class="list-inline">
+			<li><a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Medio-Ambiente" class="patrocina-sec"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-mad.medioambiente-light.png" alt="Medio ambiente -- Ayuntamiento de Madrid" /></a></li>
 			<li><a href="http://www.programadeactividadesambientales.com/" class="patrocina-sec"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-habitat-light.png" alt="Hábitat Madrid" /></a></li>
 			<li><a class="patrocina-main" href="https://redhuertosurbanosmadrid.wordpress.com/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-rehu-light.png" alt="Red de Huertos Urbanos de Madrid" /></a></li>
 			<li><a class="patrocina-ter" href="http://ciudad-escuela.org/"><img src="<?php echo CHUERTO_BLOGTHEME; ?>/images/chuerto-cescuela-light.png" alt="Ciudad Escuela. Pedagogía urbana open source" /></a></li>
